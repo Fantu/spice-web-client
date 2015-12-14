@@ -34,7 +34,7 @@ must display the words "Powered by eyeos" and retain the original copyright noti
 -->
 <html>
     <head>
-        <title>eyeOS Spice Web Client</title>
+        <title>Spice Web Client</title>
         <meta charset="utf-8">
         <!-- libs -->
         <script src="lib/modernizr.js"></script>
@@ -120,6 +120,13 @@ must display the words "Powered by eyeos" and retain the original copyright noti
         <script src="keymaps/keymap.js"></script>
         <script src="application/WorkerProcess.js"></script>
         <script src="run.js"></script>
+        <script>
+          window.freccia = JSON.parse(window.sessionStorage.getItem("spice"))
+          if (window.freccia) {
+            window.document.title = window.freccia.title
+            window.name = window.freccia.wname
+          }
+        </script>
         <!-- end core -->
         <meta content="yes" name="apple-mobile-web-app-capable" />
 
